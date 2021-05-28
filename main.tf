@@ -14,8 +14,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "var.region"
-  shared_credentials_file = "/Users/fnolla/.aws/credentials"
+  region = "us-east-2"
   profile = "circle-ci-user"
 }
 
