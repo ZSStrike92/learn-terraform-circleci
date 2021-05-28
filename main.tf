@@ -6,10 +6,17 @@ terraform {
     }
   }
   required_version = "~> 0.14"
+  backend "s3" {
+    bucket = "de470973-9299-6ac8-749b-0cdaf4f11ffb-backend"
+    key = "terraform/webapp/terraform.tfstate"
+    region = "us-east-2"
+  }
 }
 
 provider "aws" {
-  region = var.region
+  region = "var.region"
+  shared_credentials_file = "/Users/fnolla/.aws/credentials"
+  profile = "circle-ci-user"
 }
 
 resource "random_uuid" "randomid" {}
