@@ -6,6 +6,14 @@ terraform {
   }
 }
 
+provider "aws" {
+  access_key = "AKIATLNZLTYIXY4VIQOF"
+  secret_key = "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"
+  region = "us-east-2"
+  shared_credentials_file = "~/Users/fnolla/.aws/credentials"
+  profile = "circle-ci-user"
+}
+
 resource "random_uuid" "randomid" {}
 
 resource "aws_s3_bucket" "terraform_state" {
